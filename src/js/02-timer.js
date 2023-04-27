@@ -45,7 +45,7 @@ function setRemainingInterval() {
     const currentDate = Date.now();
     const convertedRemainingTime = convertMs(selectedDate - currentDate);
 
-    if (!Number(convertedRemainingTime.seconds)) {
+    if (selectedDate - currentDate < 0) {
       Notify.success('Congrats, the timer is up!');
       refs.btn.disabled = false;
       refs.input.disabled = false;
